@@ -74,6 +74,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+      <button type="button" onClick={() => console.log(forExample)}>
+        press me and look at the console
+      </button>
     </Layout>
   );
 };
