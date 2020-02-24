@@ -1,0 +1,12 @@
+.navigation {
+  background-color: goldenrod;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    background-color: darken($color: goldenrod, $amount: 5);
+    padding: 0.1em 1em;
+    margin: 0 2em;
+    color: crimson;
+  }
+}
