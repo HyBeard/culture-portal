@@ -44,7 +44,7 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "writer-data" } } }) {
       edges {
         node {
           id
