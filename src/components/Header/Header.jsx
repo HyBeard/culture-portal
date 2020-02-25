@@ -2,10 +2,14 @@ import React from 'react';
 import styles from './Header.module.scss';
 
 const Header = ({ children }) => {
+  const [header, nav, switchLang] = children;
   return (
     <header className={styles.header}>
-      <h1>This is a header with Navigation component</h1>
-      {children}
+      <div className={styles.headerMain}>
+        {header}
+        {nav}
+      </div>
+      <div className={styles.headerAside}>{switchLang}</div>
     </header>
   );
 };
