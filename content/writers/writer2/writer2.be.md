@@ -1,6 +1,6 @@
 ---
 dataKey: writerData
-lang: ru
+contentLang: be
 name: autor 2
 yearsOfLife: 2000-2100
 photo: "./writer2_photo.jpg"
