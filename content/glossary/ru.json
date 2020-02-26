@@ -1,0 +1,23 @@
+{
+  "selectLanguage": "Язык",
+  "artistsPageButton": "К списку писателей",
+  "mainPageButton": "Главная",
+  "AuthorOfDay": "Писатель дня",
+  "footerMessage": "Сайт разработан",
+  "timelineTitle": "Линия времени",
+  "worksTitle": "Главные произведения",
+  "videoTitle": "Youtube видео",
+  "mapTitle": "Карта",
+  "galleryTitle": "Галерея",
+  "logo": "Писатели Беларуси",
+  "be": "Беларуская",
+  "ru": "Русский",
+  "en": "English",
+  "notFound": "Страница не найдена",
+  "artistCardReadMore": "ЧИТАТЬ ДАЛЬШЕ",
+  "aboutPortal": "О Портале",
+  "ourTeam": "Наша Команда",
+  "searchPlaceholder": "Поиск",
+  "noSearchResults": "Ничего не найдено",
+  "showVideo": "Смотреть видео"
+}
