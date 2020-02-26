@@ -36,11 +36,17 @@ const MainPage = ({ data, pageContext: { pageLang } }) => {
   return (
     <Layout>
       <LangSwitcher />
-      <h1>{t('artistsPageButton')} - [ text from glossary for example ]</h1>
       <div dangerouslySetInnerHTML={{ __html: aboutPortal.node.html }} />
-      <AuthorOfTheDay writersEdges={writersEdges} />
+      <AuthorOfTheDay writersEdges={writersEdges}>
+        <h1>{t('AuthorOfDay')} - [ text from glossary for example ]</h1>
+        <p>{t('footerMessage')}</p>
+        <p>{t('worksTitle')}</p>
+        <p>{t('videoTitle')}</p>
+        <p>{t('galleryTitle')}</p>
+        <p>{t('footerMessage')}</p>
+      </AuthorOfTheDay>
 
-      <button type="button" onClick={() => console.log(aboutPortal)}>
+      <button type="button" onClick={() => console.log(writersEdges)}>
         console query
       </button>
     </Layout>

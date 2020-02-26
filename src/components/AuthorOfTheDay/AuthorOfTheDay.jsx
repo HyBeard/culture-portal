@@ -1,10 +1,9 @@
 import React from 'react';
 
-const AuthorOfTheDay = ({ writersEdges }) => {
+const AuthorOfTheDay = ({ writersEdges, children }) => {
   // TODO: add a rule to choose the author of the day
-  const authorCount = writersEdges.length;
-  const randomIndex = Math.floor(Math.random() * (authorCount + 1));
-  const randomAuthorEdge = writersEdges[randomIndex];
+  const [fakeHeader, fakeFooter, fakeImg] = children;
+  const randomAuthorEdge = writersEdges[0];
   const {
     node: {
       frontmatter: {
@@ -24,6 +23,9 @@ const AuthorOfTheDay = ({ writersEdges }) => {
       <p>{name}</p>
       <p>{yearsOfLife}</p>
       <img src={publicURL} alt="" />
+      {fakeHeader}
+      {fakeFooter}
+      {fakeImg}
     </div>
   );
 };
