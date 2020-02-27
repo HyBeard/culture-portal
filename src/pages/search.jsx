@@ -3,12 +3,20 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-const Search = ({ data /* location */ }) => {
-  console.log(data);
+const Search = ({ data }) => {
+  const authors = data.allMarkdownRemark.edges.map((dataObj) => {
+    const { name, yearsOfLife } = dataObj.node.frontmatter;
+    return {
+      id: dataObj.node.id,
+      slug: dataObj.node.fields.slug,
+      name,
+      yearsOfLife,
+    };
+  });
   return (
     <Layout>
-      <Link to="1">1</Link>
-      <h2>this is search page</h2>
+      <h2>Search author</h2>
+      <Link to={authors[0].slug}>{authors[0].name}</Link>
     </Layout>
   );
 };
