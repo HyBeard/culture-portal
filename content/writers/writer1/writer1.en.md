@@ -1,5 +1,6 @@
 ---
-type: writer-data
+dataKey: writerData
+contentLang: en
 name: autor 1
 yearsOfLife: 1111-2020
 photo: "./writer1_photo.jpg"

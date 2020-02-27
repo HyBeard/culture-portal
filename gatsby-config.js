@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
+        path: `${__dirname}/content`,
+        name: 'content',
       },
     },
     {
@@ -25,13 +25,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: 'assets',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/writers`,
-        name: 'writers',
       },
     },
     {
@@ -85,8 +78,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+
+    // TODO: for i18n build
+
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/glossary`,
+    //     name: `locale`,
+    //   },
+    // },
   ],
 };

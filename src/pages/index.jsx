@@ -1,66 +1,75 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import { useTranslation } from 'react-i18next';
+
+// TODO: add styles, config rhythm
+// import { rhythm } from '../utils/typography';
 
 import Layout from '../components/Layout';
-import { rhythm } from '../utils/typography';
+import LangSwitcher from '../components/LangSwitcher';
+import AuthorOfTheDay from '../components/AuthorOfTheDay';
 
-const BlogIndex = ({ data /* location */ }) => {
-  // const siteTitle = data.site.siteMetadata.title;
-  const writersFiles = data.allMarkdownRemark.edges;
+const MainPage = ({ data, pageContext: { pageLang } }) => {
+  const { t } = useTranslation();
+  const {
+    allMarkdownRemark: { edges },
+  } = data;
 
+  // TODO: create lang filtering by graphQl-cli
+
+  // TODO: take default values if language was not found
+  const writersEdges = edges.filter(
+    ({ node }) =>
+      node.frontmatter.dataKey === 'writerData' && node.frontmatter.contentLang === pageLang,
+  );
+  const aboutPortal = edges.find(
+    ({ node }) =>
+      node.frontmatter.dataKey === 'aboutPortal' && node.frontmatter.contentLang === pageLang,
+  );
+
+  // const teamEdges = edges.filter(
+  //   ({ node }) =>
+  //     node.frontmatter.dataKey === 'teamInfo' && node.frontmatter.contentLang === pageLang,
+  // );
+
+  // FIXME: find safe method to create page from markdown
   return (
     <Layout>
-      {writersFiles.map(({ node }) => {
-        const title = node.frontmatter.name;
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        );
-      })}
+      <LangSwitcher />
+      <div dangerouslySetInnerHTML={{ __html: aboutPortal.node.html }} />
+      <AuthorOfTheDay writersEdges={writersEdges}>
+        <h1>{t('AuthorOfDay')} - [ text from glossary for example ]</h1>
+        <p>{t('footerMessage')}</p>
+        <p>{t('worksTitle')}</p>
+        <p>{t('videoTitle')}</p>
+        <p>{t('galleryTitle')}</p>
+        <p>{t('footerMessage')}</p>
+      </AuthorOfTheDay>
+
+      <button type="button" onClick={() => console.log(writersEdges)}>
+        console query
+      </button>
     </Layout>
   );
 };
 
-export default BlogIndex;
+export default MainPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { type: { eq: "writer-data" } } }) {
+    allMarkdownRemark {
       edges {
         node {
-          id
-          excerpt
-          fields {
-            slug
-          }
           frontmatter {
+            dataKey
+            contentLang
             name
-            video
-            works
-            yearsOfLife
             photo {
-              absolutePath
+              publicURL
             }
+            yearsOfLife
           }
+          html
         }
       }
     }
