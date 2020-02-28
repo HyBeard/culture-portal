@@ -1,32 +1,16 @@
 import React from 'react';
 
-const AuthorOfTheDay = ({ writersEdges, children }) => {
-  // TODO: add a rule to choose the author of the day
-  const [fakeHeader, fakeFooter, fakeImg] = children;
-  const randomAuthorEdge = writersEdges[0];
-  const {
-    node: {
-      frontmatter: {
-        name,
-        yearsOfLife,
-        photo: { publicURL },
-      },
-    },
-  } = randomAuthorEdge;
+import AuthorCard from '../AuthorCard';
+
+const AuthorOfTheDay = ({ authorsEdges }) => {
+  const authorsCount = authorsEdges.length;
+  const randomAuthorIndex = Math.floor(Math.random() * authorsCount);
+  const randomAuthorEdge = authorsEdges[randomAuthorIndex];
 
   return (
-    <div
-      style={{
-        border: '2px solid gold',
-      }}
-    >
-      <p>{name}</p>
-      <p>{yearsOfLife}</p>
-      <img src={publicURL} alt="" />
-      {fakeHeader}
-      {fakeFooter}
-      {fakeImg}
-    </div>
+    <section className="day-author">
+      <AuthorCard authorData={randomAuthorEdge.frontmatter} />;
+    </section>
   );
 };
 

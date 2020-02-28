@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useTranslation } from 'react-i18next';
 
 // TODO: add styles, config rhythm
 // import { rhythm } from '../utils/typography';
@@ -10,21 +9,20 @@ import LangSwitcher from '../components/LangSwitcher';
 import AuthorOfTheDay from '../components/AuthorOfTheDay';
 
 const MainPage = ({ data, pageContext: { pageLang } }) => {
-  const { t } = useTranslation();
   const {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { nodes },
   } = data;
 
   // TODO: create lang filtering by graphQl-cli
 
   // TODO: take default values if language was not found
-  const writersEdges = edges.filter(
-    ({ node }) =>
-      node.frontmatter.dataKey === 'writerData' && node.frontmatter.contentLang === pageLang,
+  const authorsEdges = nodes.filter(
+    ({ frontmatter }) =>
+      frontmatter.dataKey === 'writerData' && frontmatter.contentLang === pageLang,
   );
-  const aboutPortal = edges.find(
-    ({ node }) =>
-      node.frontmatter.dataKey === 'aboutPortal' && node.frontmatter.contentLang === pageLang,
+  const aboutPortal = nodes.find(
+    ({ frontmatter }) =>
+      frontmatter.dataKey === 'aboutPortal' && frontmatter.contentLang === pageLang,
   );
 
   // const teamEdges = edges.filter(
@@ -36,17 +34,9 @@ const MainPage = ({ data, pageContext: { pageLang } }) => {
   return (
     <Layout>
       <LangSwitcher />
-      <div dangerouslySetInnerHTML={{ __html: aboutPortal.node.html }} />
-      <AuthorOfTheDay writersEdges={writersEdges}>
-        <h1>{t('AuthorOfDay')} - [ text from glossary for example ]</h1>
-        <p>{t('footerMessage')}</p>
-        <p>{t('worksTitle')}</p>
-        <p>{t('videoTitle')}</p>
-        <p>{t('galleryTitle')}</p>
-        <p>{t('footerMessage')}</p>
-      </AuthorOfTheDay>
-
-      <button type="button" onClick={() => console.log(writersEdges)}>
+      <div dangerouslySetInnerHTML={{ __html: aboutPortal.html }} />
+      <AuthorOfTheDay authorsEdges={authorsEdges} />
+      <button type="button" onClick={() => console.log(authorsEdges)}>
         console query
       </button>
     </Layout>
@@ -58,19 +48,20 @@ export default MainPage;
 export const pageQuery = graphql`
   query {
     allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            dataKey
-            contentLang
-            name
-            photo {
-              publicURL
-            }
-            yearsOfLife
+      nodes {
+        frontmatter {
+          path
+          dataKey
+          contentLang
+          name
+          description
+          birthDate
+          deathDate
+          photo {
+            publicURL
           }
-          html
         }
+        html
       }
     }
   }
