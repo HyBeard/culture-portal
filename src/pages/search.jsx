@@ -5,12 +5,13 @@ import Layout from '../components/Layout';
 
 const Search = ({ data }) => {
   const authors = data.allMarkdownRemark.edges.map((dataObj) => {
-    const { name, yearsOfLife } = dataObj.node.frontmatter;
+    const { name, birthDate, deathDate } = dataObj.node.frontmatter;
     return {
       id: dataObj.node.id,
       slug: dataObj.node.fields.slug,
       name,
-      yearsOfLife,
+      birthDate,
+      deathDate,
     };
   });
   return (
@@ -25,7 +26,7 @@ export default Search;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { type: { eq: "writer-data" } } }) {
+    allMarkdownRemark(filter: { frontmatter: { dataKey: { eq: "writerData" } } }) {
       edges {
         node {
           id
@@ -37,7 +38,8 @@ export const pageQuery = graphql`
             name
             video
             works
-            yearsOfLife
+            birthDate
+            deathDate
             photo {
               absolutePath
             }

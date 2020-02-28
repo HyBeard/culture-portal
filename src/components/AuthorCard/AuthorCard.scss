@@ -1,0 +1,54 @@
+.author-card {
+  display: grid;
+  margin: 0 auto;
+  grid-template-areas: "photo body";
+
+  &__photo-box {
+    grid-area: photo;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+  }
+
+  &__photo {
+    grid-area: photo;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 250px;
+    max-height: 250px;
+    grid-area: body;
+  }
+
+  &__description {
+    display: -webkit-box;
+    margin-bottom: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &__link-btn {
+    box-shadow: none;
+  }
+
+  &_size_s {
+    .author-card__photo {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    width: 250px;
+    grid-template-areas:
+      "photo"
+      "body";
+  }
+}
