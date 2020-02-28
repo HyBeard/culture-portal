@@ -1,68 +1,17 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
-// TODO: add styles, config rhythm
-// import { rhythm } from '../utils/typography';
+const RedirectPage = () => {
+  if (typeof window !== 'undefined') {
+    const { i18n } = useTranslation();
+    const userLang = i18n.language;
+    const homeUrl = withPrefix(`/${userLang}/`);
 
-import Layout from '../components/Layout';
-import LangSwitcher from '../components/LangSwitcher';
-import AuthorOfTheDay from '../components/AuthorOfTheDay';
+    navigate(homeUrl);
+  }
 
-const MainPage = ({ data, pageContext: { pageLang } }) => {
-  const {
-    allMarkdownRemark: { nodes },
-  } = data;
-
-  // TODO: create lang filtering by graphQl-cli
-
-  // TODO: take default values if language was not found
-  const authorsEdges = nodes.filter(
-    ({ frontmatter }) =>
-      frontmatter.dataKey === 'writerData' && frontmatter.contentLang === pageLang,
-  );
-  const aboutPortal = nodes.find(
-    ({ frontmatter }) =>
-      frontmatter.dataKey === 'aboutPortal' && frontmatter.contentLang === pageLang,
-  );
-
-  // const teamEdges = edges.filter(
-  //   ({ node }) =>
-  //     node.frontmatter.dataKey === 'teamInfo' && node.frontmatter.contentLang === pageLang,
-  // );
-
-  // FIXME: find safe method to create page from markdown
-  return (
-    <Layout>
-      <LangSwitcher />
-      <div dangerouslySetInnerHTML={{ __html: aboutPortal.html }} />
-      <AuthorOfTheDay authorsEdges={authorsEdges} />
-      <button type="button" onClick={() => console.log(authorsEdges)}>
-        console query
-      </button>
-    </Layout>
-  );
+  return <div />;
 };
 
-export default MainPage;
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark {
-      nodes {
-        frontmatter {
-          path
-          dataKey
-          contentLang
-          name
-          description
-          birthDate
-          deathDate
-          photo {
-            publicURL
-          }
-        }
-        html
-      }
-    }
-  }
-`;
+export default RedirectPage;
