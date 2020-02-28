@@ -10,35 +10,41 @@ exports.createPages = async ({ graphql, actions }) => {
   const errorPage = path.resolve('./src/pages/404.jsx');
 
   // FIXME: change data grabbing (graphQl-cli with variables)
-  const postsQuery = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-          filter: { frontmatter: { type: { eq: "post-data" } } }
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+  const dataQuery = await graphql(`
+    {
+      site {
+        siteMetadata {
+          langs {
+            defaultLangKey
+            list
+          }
+        }
+      }
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+        filter: { frontmatter: { type: { eq: "post-data" } } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
-    `,
-  );
+    }
+  `);
 
-  if (postsQuery.errors) {
-    throw postsQuery.errors;
+  if (dataQuery.errors) {
+    throw dataQuery.errors;
   }
 
-  // Create blog posts pages.
-  const posts = postsQuery.data.allMarkdownRemark.edges;
+  const langsList = dataQuery.data.site.siteMetadata.langs.list;
+  const posts = dataQuery.data.allMarkdownRemark.edges;
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
@@ -55,8 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // FIXME: get langs from metadata or other centralize place
-  ['en', 'ru', 'be'].forEach((lng) => {
+  langsList.forEach((lng) => {
     createPage({
       path: `/${lng}/`,
       component: indexPage,
@@ -86,6 +91,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     });
   }
+
+  // if (node.internal.type === 'MarkdownRemark') {
+  //   const value = createFilePath({ node, getNode });
+  //   createNodeField({
+  //     name: 'slug',
+  //     node,
+  //     value,
+  //   });
+  // }
 };
 
 // TODO: check with build
