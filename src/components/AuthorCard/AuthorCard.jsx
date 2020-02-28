@@ -8,7 +8,7 @@ const AuthorCard = ({ authorData, t }) => {
   const {
     name,
     path,
-    description,
+    overview,
     deathDate,
     birthDate,
     photo: { publicURL },
@@ -24,7 +24,7 @@ const AuthorCard = ({ authorData, t }) => {
       <Card.Body className="author-card__body">
         <Card.Title>{name}</Card.Title>
         <Card.Text>{yearsLife}</Card.Text>
-        <Card.Text className="author-card__description">{description}</Card.Text>
+        <Card.Text className="author-card__overview">{overview}</Card.Text>
         <Link className="author-card__link-btn" to={path}>
           <Button>{t('artistCardReadMore')}</Button>
         </Link>

@@ -54,7 +54,7 @@ export const pageQuery = graphql`
           dataKey
           contentLang
           name
-          description
+          overview
           birthDate
           deathDate
           photo {
