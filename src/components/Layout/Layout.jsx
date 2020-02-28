@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Header from '../Header';
 import Navigation from '../Navigation';
 import LangSwitcher from '../LangSwitcher';
+import Footer from '../Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -18,9 +19,9 @@ const Layout = ({ children }) => {
         <LangSwitcher />
       </Header>
       <main className="main">{children}</main>
-      <footer>
-        <span>This is a footer</span>
-      </footer>
+      <Footer>
+        <p>® Портал белорусских писателей 2020</p>
+      </Footer>
     </>
   );
 };
