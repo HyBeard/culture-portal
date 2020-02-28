@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve('./src/templates/blog-post.jsx');
-  const indexPage = path.resolve('./src/pages/index.jsx');
+  const mainPage = path.resolve('./src/templates/main-page.jsx');
   const errorPage = path.resolve('./src/pages/404.jsx');
 
   // FIXME: change data grabbing (graphQl-cli with variables)
@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
   langsList.forEach((lng) => {
     createPage({
       path: `/${lng}/`,
-      component: indexPage,
+      component: mainPage,
       context: {
         pageLang: lng,
       },
