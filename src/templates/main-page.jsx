@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 // import { rhythm } from '../utils/typography';
 
 import Layout from '../components/Layout';
-import LangSwitcher from '../components/LangSwitcher';
 import AuthorOfTheDay from '../components/AuthorOfTheDay';
 
 const MainPage = ({ data, pageContext: { pageLang } }) => {
@@ -33,7 +32,6 @@ const MainPage = ({ data, pageContext: { pageLang } }) => {
   // FIXME: find safe method to create page from markdown
   return (
     <Layout>
-      <LangSwitcher />
       <div dangerouslySetInnerHTML={{ __html: aboutPortal.html }} />
       <AuthorOfTheDay authorsEdges={authorsEdges} />
       <button type="button" onClick={() => console.log(authorsEdges)}>

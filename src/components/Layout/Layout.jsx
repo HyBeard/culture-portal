@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import Header from '../Header';
 import Navigation from '../Navigation';
+import LangSwitcher from '../LangSwitcher';
 
 const Layout = ({ children }) => {
   return (
@@ -12,10 +13,9 @@ const Layout = ({ children }) => {
         <Navigation>
           <Link to="/">home</Link>
           <Link to="/blog">blog</Link>
-          <Link to="/writer1/">writer1</Link>
-          <Link to="/writer2/">writer2</Link>
+          <Link to="/search">search</Link>
         </Navigation>
-        <div className="future-button-switch" />
+        <LangSwitcher />
       </Header>
       <main className="main">{children}</main>
       <footer>
