@@ -1,16 +1,16 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const DeveloperCard = ({ nick, name, linkToGitHub, srcImg }) => {
   return (
-    <Card className="author-card">
-      <div className="author-card__photo-box">
-        <Card.Img className="author-card__photo" src={srcImg.publicURL} alt="photo" />
-      </div>
-      <Card.Body className="author-card__body">
+    <Card className="developer-card" style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={srcImg.publicURL} />
+      <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <a className="author-card__link-btn" href={linkToGitHub} target="__blank">
-          {nick}
+        <Card.Text>@{nick}</Card.Text>
+        <a href={linkToGitHub} target="__blank">
+          <Button variant="primary">Go to github</Button>
         </a>
       </Card.Body>
     </Card>

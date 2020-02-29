@@ -3,7 +3,7 @@ import DeveloperCard from '../DeveloperCard';
 
 const DeveloperList = ({ data }) => {
   return (
-    <section>
+    <section className="developer-list">
       {data.map(({ nick, name, linkToGitHub, srcImg }, i) => {
         const key = `card: ${i}`;
         return (

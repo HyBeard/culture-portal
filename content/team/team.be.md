@@ -6,7 +6,7 @@ team:
   - nick: radvam
     name: Дзмітрый Радкавец
     linkToGitHub: https://github.com/radvam
-    srcImg: "./radkovets.jpg"
+    srcImg: "./radkovets.png"
   - nick: HyBeard
     name: Илля Капцэвіч
     linkToGitHub: https://github.com/HyBeard
