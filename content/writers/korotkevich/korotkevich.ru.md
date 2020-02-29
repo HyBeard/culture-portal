@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=9UIt_HLlbxs"
 photo: "./korotkevich_photo.JPG"
 works:
   - date: "1964"
-    work: "Дикая охота короля Стаха"
+    title: "Дикая охота короля Стаха"
   - date: "1965"
-    work: "Колосья под серпом твоим"
+    title: "Колосья под серпом твоим"
   - date: "1977"
-    work: "Земля под белыми крыльями"
+    title: "Земля под белыми крыльями"
 ---

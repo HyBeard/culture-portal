@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=kuaJLU71W10"
 photo: "./borodulin_photo.JPG"
 works:
   - date: "1959"
-    work: "A month above the steppe"
+    title: "A month above the steppe"
   - date: "2006"
-    work: "Runes of Perunova"
+    title: "Runes of Perunova"
   - date: "2010"
-    work: "Overturned by"
+    title: "Overturned by"
 ---

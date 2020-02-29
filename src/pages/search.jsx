@@ -38,7 +38,7 @@ export const pageQuery = graphql`
             name
             works {
               date
-              work
+              title
             }
             birthDate
             deathDate

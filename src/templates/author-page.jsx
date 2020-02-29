@@ -3,13 +3,20 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import AuthorCard from '../components/AuthorCard';
+import Masterpieces from '../components/Masterpieces';
 
 const authorPage = ({ data }) => {
   const authorData = data.markdownRemark.frontmatter;
+  const { works } = authorData;
 
   return (
     <Layout>
       <AuthorCard authorData={authorData} />;
+      <Masterpieces data={works}>
+        <span>header</span>
+        <span>works</span>
+        <span>dates</span>
+      </Masterpieces>
     </Layout>
   );
 };
@@ -39,7 +46,7 @@ export const pageQuery = graphql`
         }
         works {
           date
-          work
+          title
         }
         activity {
           date

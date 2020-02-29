@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=J7UxHVA_z7M"
 photo: "./adamovich_photo.JPG"
 works:
   - date: "1969"
-    work: "Последний отпуск"
+    title: "Последний отпуск"
   - date: "1971"
-    work: "Хатынская повесть"
+    title: "Хатынская повесть"
   - date: "1987"
-    work: "Поcледняя пастораль"
+    title: "Поcледняя пастораль"
 ---

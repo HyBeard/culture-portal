@@ -31,9 +31,9 @@ youtube: "https://www.youtube.com/watch?v=XUFhoYrHmD0"
 photo: "./biadula-photo.jpg"
 works:
   - date: "1922"
-    work: "Пад родным небам"
+    title: "Пад родным небам"
   - date: "1925"
-    work: "Буралом"
+    title: "Буралом"
   - date: "1930"
-    work: "Тры пальца"
+    title: "Тры пальца"
 ---

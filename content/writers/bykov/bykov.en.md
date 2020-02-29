@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=rnt3qMC-rdY"
 photo: "./bykov_photo.JPG"
 works:
   - date: "1965"
-    work: "It doesn't hurt to be dead"
+    title: "It doesn't hurt to be dead"
   - date: "1972"
-    work: "Live till dawn"
+    title: "Live till dawn"
   - date: "2003"
-    work: "Long road home"
+    title: "Long road home"
 ---

@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=rnt3qMC-rdY"
 photo: "./bykov_photo.JPG"
 works:
   - date: "1965"
-    work: "Мертвым не больно"
+    title: "Мертвым не больно"
   - date: "1972"
-    work: "Дожить до рассвета"
+    title: "Дожить до рассвета"
   - date: "2003"
-    work: "Долгая дорога домой"
+    title: "Долгая дорога домой"
 ---

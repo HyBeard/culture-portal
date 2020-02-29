@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=fQ9P0Jft2Os"
 photo: "./shamyakin_photo.JPG"
 works:
   - date: "1949"
-    work: "Deep current"
+    title: "Deep current"
   - date: "1968"
-    work: "Snowy winters"
+    title: "Snowy winters"
   - date: "1981"
-    work: "Petrograd - Brest"
+    title: "Petrograd - Brest"
 ---

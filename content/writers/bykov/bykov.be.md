@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=rnt3qMC-rdY"
 photo: "./bykov_photo.JPG"
 works:
   - date: "1965"
-    work: "Мёртвым не баліць"
+    title: "Мёртвым не баліць"
   - date: "1972"
-    work: "Дажыць да світання"
+    title: "Дажыць да світання"
   - date: "2003"
-    work: "Доўгая дарога дадому"
+    title: "Доўгая дарога дадому"
 ---

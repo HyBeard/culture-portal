@@ -31,9 +31,9 @@ youtube: "https://www.youtube.com/watch?v=XUFhoYrHmD0"
 photo: "./biadula-photo.jpg"
 works:
   - date: "1922"
-    work: "Under my own sky."
+    title: "Under my own sky."
   - date: "1925"
-    work: "Buralom"
+    title: "Buralom"
   - date: "1930"
-    work: "Three fingers"
+    title: "Three fingers"
 ---

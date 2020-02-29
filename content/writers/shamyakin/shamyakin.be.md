@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=fQ9P0Jft2Os"
 photo: "./shamyakin_photo.JPG"
 works:
   - date: "1949"
-    work: "Глыбокая плынь"
+    title: "Глыбокая плынь"
   - date: "1968"
-    work: "Снежныя зімы"
+    title: "Снежныя зімы"
   - date: "1981"
-    work: "Петраград - Брэст"
+    title: "Петраград - Брэст"
 ---
