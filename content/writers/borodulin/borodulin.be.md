@@ -1,7 +1,7 @@
 ---
 path: "/borodulin"
 dataKey: "writerData"
-contentLang: "ru"
+contentLang: "be"
 name: "Рыгор Барадулін"
 overview: "Савецкі і беларускі паэт, эсэіст, перакладчык."
 birthDate: "24 Лютага 1935"

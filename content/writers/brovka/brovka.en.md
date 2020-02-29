@@ -15,7 +15,7 @@ activity:
   - date: "25.06.1905"
     description: "He was born on June 25, 1905 in the village of Putilkovichi (now Ushachsky district, Vitebsk region, Belarus) in a peasant family."
   - date: "1928"
-    description: "Since 1928 - in the literary association "Maladniak", later in the Belarusian Association of Proletarian Writers (BelAPP)."
+    description: 'Since 1928 - in the literary association "Maladniak", later in the Belarusian Association of Proletarian Writers (BelAPP).'
   - date: "1941-1942"
     description: "During this time, he served in the Red Army, worked in the front and partisan press."
   - date: "1943-1945"

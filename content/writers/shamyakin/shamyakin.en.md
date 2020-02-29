@@ -25,8 +25,7 @@ activity:
   - date: "1980-1992"
     description: "Chief editor of the publishing house 'Belarusian Soviet Encyclopedia'."
   - date: "14.10.2004"
-    description: "He died on October 14, 2004 in Minsk. He was buried in the Eastern cemetery."
-He died on October 14, 2004."
+    description: "He died on October 14, 2004 in Minsk. He was buried in the Eastern cemetery. He died on October 14, 2004."
 deathDate: "14 October 2004"
 photoGallery:
   - "./shamyakin_1.JPG"

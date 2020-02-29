@@ -15,9 +15,9 @@ activity:
   - date: "23.04.1886"
     description: "Samuel (Shmuel-Nohim) Plavnik, later known by his literary pseudonym Zmitrok Byadulya, was born into a poor Jewish family."
   - date: "1910"
-    description: "Samuel Plavnik became a permanent author of the Vilna newspaper "Nasha Niva"."
+    description: 'Samuel Plavnik became a permanent author of the Vilna newspaper "Nasha Niva".'
   - date: "1918"
-    description: "He worked with the newspaper "Belaruski Shlyah", which was published under German occupation."
+    description: 'He worked with the newspaper "Belaruski Shlyah", which was published under German occupation.'
   - date: "1918-1919"
     description: "He sympathized with the BNR, was the author of a number of sharply anti-Bolshevik articles."
   - date: "03.11.1941"
