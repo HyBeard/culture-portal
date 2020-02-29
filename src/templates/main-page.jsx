@@ -44,8 +44,8 @@ const MainPage = ({ data, pageContext: { pageLang } }) => {
 export default MainPage;
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark {
+  query($pageLang: String!) {
+    allMarkdownRemark(filter: { frontmatter: { contentLang: { eq: $pageLang } } }) {
       nodes {
         frontmatter {
           path

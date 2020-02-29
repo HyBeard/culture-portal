@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPost = path.resolve('./src/templates/blog-post.jsx');
   const mainPage = path.resolve('./src/templates/main-page.jsx');
+  const authorPage = path.resolve('./src/templates/author-page.jsx');
   const errorPage = path.resolve('./src/pages/404.jsx');
 
   // FIXME: change data grabbing (graphQl-cli with variables)
@@ -33,6 +34,15 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
             }
+          }
+        }
+      }
+      authorsData: allMarkdownRemark(filter: { frontmatter: { dataKey: { eq: "writerData" } } }) {
+        nodes {
+          id
+          frontmatter {
+            contentLang
+            path
           }
         }
       }
@@ -78,6 +88,18 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  const authorsNodes = dataQuery.data.authorsData.nodes;
+
+  authorsNodes.forEach(({ id, frontmatter: { contentLang, path: pagePath } }) =>
+    createPage({
+      path: `/${contentLang}${pagePath}`,
+      component: authorPage,
+      context: {
+        id,
+      },
+    }),
+  );
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
