@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/Blog/bio';
-import Layout from '../components/Blog/layout';
-import SEO from '../components/Blog/seo';
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 
-const BlogPostTemplate = (forExample) => {
-  const { location } = forExample;
-  const { pageContext } = forExample;
-  const { data } = forExample;
+const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} overview={post.excerpt || post.frontmatter.overview} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
       <article>
         <header>
           <h1
@@ -74,9 +74,6 @@ const BlogPostTemplate = (forExample) => {
           </li>
         </ul>
       </nav>
-      <button type="button" onClick={() => console.log(forExample)}>
-        press me and look at the console
-      </button>
     </Layout>
   );
 };
@@ -97,7 +94,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        overview
+        description
       }
     }
   }

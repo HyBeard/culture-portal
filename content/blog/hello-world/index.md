@@ -1,8 +1,7 @@
 ---
-type: post-data
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-overview: "Hello World"
+description: "Hello World"
 ---
 
 This is my first post on my new fake blog! How exciting!
