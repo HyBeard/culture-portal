@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=7xHGTr4EbK4"
 photo: "./borodulin_photo.JPG"
 works:
   - date: "1931"
-    work: "Цэхавыя будні"
+    title: "Цэхавыя будні"
   - date: "1959"
-    work: "Пахне чабор"
+    title: "Пахне чабор"
   - date: "1974"
-    work: "І днем и ноччу"
+    title: "І днем и ноччу"
 ---

@@ -36,10 +36,9 @@ export const pageQuery = graphql`
           }
           frontmatter {
             name
-            video
             works {
               date
-              work
+              title
             }
             birthDate
             deathDate

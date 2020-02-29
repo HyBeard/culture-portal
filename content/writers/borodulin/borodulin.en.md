@@ -13,7 +13,7 @@ birthPlaceLocation:
   zoom: 6
 activity:
   - date: "24.02.1935"
-    description: "Born on the farm Veresovka, the official name of the farm was "Gorodok-2" (now it's the north-western outskirts of the village Tikhonyaty, Sorochinskoe village council)."
+    description: 'Born on the farm Veresovka, the official name of the farm was "Gorodok-2" (now it's the north-western outskirts of the village Tikhonyaty, Sorochinskoe village council).'
   - date: "1954"
     description: "Graduated from Ushach High School."
   - date: "1959"
@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=kuaJLU71W10"
 photo: "./borodulin_photo.JPG"
 works:
   - date: "1959"
-    work: "A month above the steppe"
+    title: "A month above the steppe"
   - date: "2006"
-    work: "Runes of Perunova"
+    title: "Runes of Perunova"
   - date: "2010"
-    work: "Overturned by"
+    title: "Overturned by"
 ---

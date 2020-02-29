@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=J7UxHVA_z7M"
 photo: "./adamovich_photo.JPG"
 works:
   - date: "1969"
-    work: "Last holiday"
+    title: "Last holiday"
   - date: "1971"
-    work: "Khatyn story"
+    title: "Khatyn story"
   - date: "1987"
-    work: "Last Pastoral"
+    title: "Last Pastoral"
 ---

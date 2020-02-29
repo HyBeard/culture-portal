@@ -1,7 +1,7 @@
 ---
 path: "/borodulin"
 dataKey: "writerData"
-contentLang: "ru"
+contentLang: "be"
 name: "Рыгор Барадулін"
 overview: "Савецкі і беларускі паэт, эсэіст, перакладчык."
 birthDate: "24 Лютага 1935"
@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=kuaJLU71W10"
 photo: "./borodulin_photo.JPG"
 works:
   - date: "1959"
-    work: "Месяц над стэпамі"
+    title: "Месяц над стэпамі"
   - date: "2006"
-    work: "Руны Перуновы"
+    title: "Руны Перуновы"
   - date: "2010"
-    work: "Перакуленнае"
+    title: "Перакуленнае"
 ---

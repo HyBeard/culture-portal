@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=J7UxHVA_z7M"
 photo: "./adamovich_photo.JPG"
 works:
   - date: "1969"
-    work: "Апошні адпачынак"
+    title: "Апошні адпачынак"
   - date: "1971"
-    work: "Хатынская аповесць"
+    title: "Хатынская аповесць"
   - date: "1987"
-    work: "Апошняя пастараль"
+    title: "Апошняя пастараль"
 ---

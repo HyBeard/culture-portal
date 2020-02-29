@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=9UIt_HLlbxs"
 photo: "./korotkevich_photo.JPG"
 works:
   - date: "1964"
-    work: "Дзікае паляванне караля Стаха"
+    title: "Дзікае паляванне караля Стаха"
   - date: "1965"
-    work: "Каласы пад сярпом тваім"
+    title: "Каласы пад сярпом тваім"
   - date: "1977"
-    work: "Зямля пад белымі крыламі"
+    title: "Зямля пад белымі крыламі"
 ---

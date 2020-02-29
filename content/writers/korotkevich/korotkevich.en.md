@@ -34,9 +34,9 @@ youtube: "https://www.youtube.com/watch?v=9UIt_HLlbxs"
 photo: "./korotkevich_photo.JPG"
 works:
   - date: "1964"
-    work: "King Stach's wild hunting"
+    title: "King Stach's wild hunting"
   - date: "1965"
-    work: "The spikes under your sickle"
+    title: "The spikes under your sickle"
   - date: "1977"
-    work: "Earth under white wings"
+    title: "Earth under white wings"
 ---

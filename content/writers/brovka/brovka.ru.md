@@ -36,9 +36,9 @@ youtube: "https://www.youtube.com/watch?v=7xHGTr4EbK4"
 photo: "./brovka_photo.JPG"
 works:
   - date: "1931"
-    work: "Цеховые будни"
+    title: "Цеховые будни"
   - date: "1959"
-    work: "Пахнет чабрец"
+    title: "Пахнет чабрец"
   - date: "1974"
-    work: "И днем и ночью"
+    title: "И днем и ночью"
 ---
