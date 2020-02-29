@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
+    title: 'Culture Portal',
+    langs: {
+      list: ['ru', 'en', 'be'],
+      defaultLangKey: 'ru',
+    },
     author: 'Kyle Mathews',
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
@@ -12,8 +16,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
+        path: `${__dirname}/content`,
+        name: 'content',
       },
     },
     {
@@ -73,8 +77,17 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-sass`,
     // `gatsby-plugin-offline`,
+
+    // TODO: for i18n build
+
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/glossary`,
+    //     name: `locale`,
+    //   },
+    // },
   ],
 };
