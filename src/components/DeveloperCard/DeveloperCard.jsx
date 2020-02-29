@@ -1,18 +1,17 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'gatsby';
+import Button from 'react-bootstrap/Button';
 
-const DeveloperCard = ({ nick, name, linkToGitHub, urlImg }) => {
+const DeveloperCard = ({ nick, name, linkToGitHub, srcImg }) => {
   return (
-    <Card className="author-card">
-      <div className="author-card__photo-box">
-        <Card.Img className="author-card__photo" src={urlImg} />
-      </div>
-      <Card.Body className="author-card__body">
+    <Card className="developer-card" style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={srcImg.publicURL} />
+      <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Link className="author-card__link-btn" to={linkToGitHub}>
-          {nick}
-        </Link>
+        <Card.Text>@{nick}</Card.Text>
+        <a href={linkToGitHub} target="__blank">
+          <Button variant="primary">Go to github</Button>
+        </a>
       </Card.Body>
     </Card>
   );
