@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
           <Link to="/">home</Link>
           <Link to="/blog">blog</Link>
           <Link to="/search">search</Link>
+          <Link to="/team">team</Link>
         </Navigation>
         <LangSwitcher />
       </Header>
