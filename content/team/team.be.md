@@ -2,11 +2,17 @@
 dataKey: teamInfo
 contentLang: be
 
-group:
-  - names:
-      - name1
-      - name2
-      - name3
-      - name4
-      - name5
+team:
+  - nick: radvam
+    name: Дзмітрый Радкавец
+    linkToGitHub: https://github.com/radvam
+    srcImg: "./radkovets.jpg"
+  - nick: HyBeard
+    name: Илля Капцэвіч
+    linkToGitHub: https://github.com/HyBeard
+    srcImg: "./kaptsevich.png"
+  - nick: nextdesusu
+    name: Илля Баканаў
+    linkToGitHub: https://github.com/nextdesusu
+    srcImg: "./bakanov.png"
 ---

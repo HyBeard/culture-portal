@@ -1,37 +1,36 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
 import Layout from '../components/Layout';
-import DeveloperCard from '../components/DeveloperCard';
+import DeveloperList from '../components/DeveloperList';
 
-const Team = () => {
+const Team = ({ data, t }) => {
+  const usersInfo = data.markdownRemark.frontmatter.team;
+  console.log(usersInfo);
   return (
     <Layout>
-      <h2>Team</h2>
-      <DeveloperCard />
+      <h2>{t('ourTeam')}</h2>
+      <DeveloperList data={usersInfo} />
     </Layout>
   );
 };
 
-export default Team;
+export default withTranslation()(Team);
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark {
-      nodes {
-        frontmatter {
-          path
-          dataKey
-          contentLang
+  {
+    markdownRemark(frontmatter: { contentLang: { eq: "ru" }, dataKey: { eq: "teamInfo" } }) {
+      id
+      frontmatter {
+        team {
+          nick
           name
-          overview
-          birthDate
-          deathDate
-          photo {
+          linkToGitHub
+          srcImg {
             publicURL
           }
         }
-        html
       }
     }
   }
