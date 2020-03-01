@@ -4,14 +4,15 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import AuthorCard from '../components/AuthorCard';
 import Masterpieces from '../components/Masterpieces';
+import Timeline from '../components/Timeline';
 
 const authorPage = ({ data }) => {
   const authorData = data.markdownRemark.frontmatter;
-  const { works } = authorData;
-
+  const { works, activity } = authorData;
   return (
     <Layout>
-      <AuthorCard authorData={authorData} />;
+      <AuthorCard authorData={authorData} />
+      <Timeline lines={activity} />
       <Masterpieces data={works}>
         <span>header</span>
         <span>works</span>

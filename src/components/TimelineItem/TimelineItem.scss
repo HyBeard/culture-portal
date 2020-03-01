@@ -1,12 +1,28 @@
 .timelineItem {
   display: grid;
-  grid-template-columns: 1fr 0.03fr 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  grid-gap: 2%;
+  margin-bottom: 5%;
 }
 
-.timelineItem-line {
-  background-color: rgb(194, 194, 209);
-  order: 2;
-  z-index: 20;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+@media screen and (max-width: 600px) {
+  .timelineItem {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 0.2fr 1fr;
+  }
+
+  .timelineItem-alert::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: -20px;
+    border: 10px solid transparent;
+    border-top: 10px solid #cce5ff;
+    margin-bottom: 0px;
+  }
+}
+
+.timelineItem-alert {
+  height: 3em;
 }
