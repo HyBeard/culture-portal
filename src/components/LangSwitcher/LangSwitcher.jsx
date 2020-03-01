@@ -10,14 +10,13 @@ const LangSwitcher = () => {
 
   const handleLangChange = (event) => {
     const newLang = event.target.value;
-    const pageURL = window.location.pathname
+    const noPrefixedPath = window.location.pathname
       .split('/')
       .slice(2)
       .join('/');
 
-    // FIXME: try to redirect by using gatsby-plugin-i18next (correct version)
     i18n.changeLanguage(newLang);
-    navigate(`/${newLang}/${pageURL}`);
+    navigate(`/${newLang}/${noPrefixedPath}`, { replace: true });
   };
 
   // FIXME: get langs list from siteMetadata

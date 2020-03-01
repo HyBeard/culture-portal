@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'gatsby';
 import { withTranslation } from 'react-i18next';
+
+import Link from '../Link';
 
 const AuthorCard = ({ authorData, t }) => {
   const {
