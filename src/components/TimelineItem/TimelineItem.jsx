@@ -1,27 +1,19 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Alert from 'react-bootstrap/Alert';
 
-const TimelineItem = ({ date, children, isRight }) => {
-  const orderRight = 3;
-  const orderLeft = 1;
+const TimelineItem = ({ date, children }) => {
   return (
     <div className="timelineItem">
-      <Card
-        border="secondary"
-        style={{
-          position: 'relative',
-          order: isRight ? orderRight : orderLeft,
-          left: isRight ? '-0.5em' : '0.5em',
-          zIndex: 10,
-        }}
-      >
+      <Alert variant="primary" className="timelineItem-alert">
+        {date}
+      </Alert>
+      <Card border="secondary">
         <Card.Header>{date}</Card.Header>
         <Card.Body>
           <Card.Text>{children}</Card.Text>
         </Card.Body>
       </Card>
-      <div className="timelineItem-line" />
-      <div style={{ order: isRight ? orderLeft : orderRight }} />
     </div>
   );
 };
