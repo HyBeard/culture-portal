@@ -1,23 +1,22 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
-const PhotoGallery = ({ slides }) => {
+const PhotoGallery = ({ slides, children }) => {
   return (
-    <Carousel>
-      {slides.map((slide, index) => {
-        const slideKey = `slide: ${index}`;
-        const { imgSrc, title, text } = slide;
-        return (
-          <Carousel.Item key={slideKey}>
-            {imgSrc && <img src={imgSrc} className="d-block w-100" alt={slideKey} />}
-            <Carousel.Caption>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        );
-      })}
-    </Carousel>
+    <section className="photo-gallery">
+      <h3>{children}</h3>
+      <Carousel>
+        {slides.map((slide, index) => {
+          const slideKey = `slide: ${index}`;
+          const { publicURL } = slide;
+          return (
+            <Carousel.Item key={slideKey}>
+              {publicURL && <img src={publicURL} className="d-block w-100" alt={slideKey} />}
+            </Carousel.Item>
+          );
+        })}
+      </Carousel>
+    </section>
   );
 };
 
