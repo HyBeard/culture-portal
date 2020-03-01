@@ -7,7 +7,7 @@ import DeveloperList from '../components/DeveloperList';
 
 const Team = ({ data, t }) => {
   const usersInfo = data.markdownRemark.frontmatter.team;
-  console.log(usersInfo);
+
   return (
     <Layout>
       <h2>{t('ourTeam')}</h2>
