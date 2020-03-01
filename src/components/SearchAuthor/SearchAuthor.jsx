@@ -1,49 +1,65 @@
 import React, { Component } from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'gatsby';
+// import Link from '../Link';
+
+import SearchBar from '../SearchBar';
 
 class SearchAuthor extends Component {
+  static termIsInString(term, string) {
+    return string.toLowerCase().includes(term.toLowerCase());
+  }
+
   constructor(props) {
     super(props);
-    const { authors } = this.props;
+    const { authorsNodes, fieldsToSearchFor } = this.props;
     this.state = {
       query: '',
-      authorsHandled: authors,
+      fieldsToSearchFor,
+      authorsNodes,
     };
   }
 
-  changeHandler = ({ target: { value } }) => {
-    const { authors } = this.props;
-    const newList = authors.filter((item) => {
-      const indexOfNonFinded = -1;
-      const checkName = item.name.toLowerCase();
-      const checkValue = value.toLowerCase();
-      const index = checkName.indexOf(checkValue);
-      return index !== indexOfNonFinded;
-    });
-    this.setState({ query: value, authorsHandled: newList });
+  onSearchChange = (query) => {
+    this.setState({ query });
   };
 
+  getRelevantAuthors() {
+    const { authorsNodes, fieldsToSearchFor, query } = this.state;
+
+    if (!query.length) {
+      return authorsNodes;
+    }
+
+    return authorsNodes.filter((node) => {
+      return fieldsToSearchFor.some((field) => SearchAuthor.termIsInString(query, node[field]));
+    });
+  }
+
   render() {
-    const { placeholder, children } = this.props;
-    const { authorsHandled, query } = this.state;
+    const {
+      onSearchChange,
+      state: { query },
+    } = this;
+
+    const relevantAuthorsNodes = this.getRelevantAuthors();
+
     return (
       <div className="search-author">
-        {children}
         <InputGroup className="mb-3">
-          <FormControl placeholder={placeholder} onChange={this.changeHandler} value={query} />
+          <SearchBar placeholder="placeholder" onSearchChange={onSearchChange} value={query} />
         </InputGroup>
         <Table responsive>
           <tbody>
-            {authorsHandled.map((author, index) => {
+            {relevantAuthorsNodes.map((node, index) => {
               const key = `author: ${index}`;
-              const { name, to } = author;
+              const { name, path, birthPlace } = node;
               return (
                 <tr key={key}>
                   <td>
-                    <Link to={to || '#'}>{name}</Link>
+                    <Link to={`ru/${path}` || '#'}>{name}</Link>
+                    <p>{birthPlace}</p>
                   </td>
                 </tr>
               );

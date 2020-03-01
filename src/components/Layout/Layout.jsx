@@ -13,8 +13,7 @@ const Layout = ({ children }) => {
         <h1>Writers of Belarus</h1>
         <Navigation>
           <Link to="/">home</Link>
-          <Link to="/blog">blog</Link>
-          <Link to="/search">search</Link>
+          <Link to="ru/search">search</Link>
           <Link to="/team">team</Link>
         </Navigation>
         <LangSwitcher />
