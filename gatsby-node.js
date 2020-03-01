@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const mainPage = path.resolve('./src/templates/main-page.jsx');
   const authorPage = path.resolve('./src/templates/author-page.jsx');
+  const searchPage = path.resolve('./src/templates/search.jsx');
   const errorPage = path.resolve('./src/pages/404.jsx');
 
   const dataQuery = await graphql(`
@@ -49,6 +50,14 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/${lng}/404`,
       component: errorPage,
+      context: {
+        pageLang: lng,
+      },
+    });
+
+    createPage({
+      path: `/${lng}/search`,
+      component: searchPage,
       context: {
         pageLang: lng,
       },
