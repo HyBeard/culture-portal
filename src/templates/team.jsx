@@ -7,7 +7,7 @@ import DeveloperList from '../components/DeveloperList';
 
 const Team = ({ data, t }) => {
   const usersInfo = data.markdownRemark.frontmatter.team;
-  console.log(usersInfo);
+
   return (
     <Layout>
       <h2>{t('ourTeam')}</h2>
@@ -19,9 +19,8 @@ const Team = ({ data, t }) => {
 export default withTranslation()(Team);
 
 export const pageQuery = graphql`
-  {
-    markdownRemark(frontmatter: { contentLang: { eq: "ru" }, dataKey: { eq: "teamInfo" } }) {
-      id
+  query($pageLang: String!) {
+    markdownRemark(frontmatter: { contentLang: { eq: $pageLang }, dataKey: { eq: "teamInfo" } }) {
       frontmatter {
         team {
           nick

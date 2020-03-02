@@ -5,11 +5,6 @@ const { createFilePath } = require('gatsby-source-filesystem');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const mainPage = path.resolve('./src/templates/main-page.jsx');
-  const authorPage = path.resolve('./src/templates/author-page.jsx');
-  const searchPage = path.resolve('./src/templates/search.jsx');
-  const errorPage = path.resolve('./src/pages/404.jsx');
-
   const dataQuery = await graphql(`
     {
       site {
@@ -37,38 +32,34 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const langsList = dataQuery.data.site.siteMetadata.langs.list;
-
-  langsList.forEach((lng) => {
-    createPage({
-      path: `/${lng}/`,
-      component: mainPage,
-      context: {
-        pageLang: lng,
-      },
-    });
-
-    createPage({
-      path: `/${lng}/404`,
-      component: errorPage,
-      context: {
-        pageLang: lng,
-      },
-    });
-
-    createPage({
-      path: `/${lng}/search`,
-      component: searchPage,
-      context: {
-        pageLang: lng,
-      },
-    });
-  });
-
   const authorsNodes = dataQuery.data.authorsData.nodes;
 
-  authorsNodes.forEach(({ id, frontmatter: { contentLang, path: pagePath } }) =>
+  const mainPage = path.resolve('./src/templates/main-page.jsx');
+  const authorPage = path.resolve('./src/templates/author-page.jsx');
+  const searchPage = path.resolve('./src/templates/search.jsx');
+  const teamPage = path.resolve('./src/templates/team.jsx');
+  const errorPage = path.resolve('./src/pages/404.jsx');
+
+  const createPageWithLngContext = (pathname, component, lng) => {
     createPage({
-      path: `/${contentLang}${pagePath}`,
+      path: `/${lng}${pathname}`,
+      component,
+      context: {
+        pageLang: lng,
+      },
+    });
+  };
+
+  langsList.forEach((lng) => {
+    createPageWithLngContext('/', mainPage, lng);
+    createPageWithLngContext('/404', errorPage, lng);
+    createPageWithLngContext('/search', searchPage, lng);
+    createPageWithLngContext('/team', teamPage, lng);
+  });
+
+  authorsNodes.forEach(({ id, frontmatter: { contentLang, path: pathname } }) =>
+    createPage({
+      path: `/${contentLang}${pathname}`,
       component: authorPage,
       context: {
         id,

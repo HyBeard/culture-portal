@@ -7,36 +7,19 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import AuthorOfTheDay from '../components/AuthorOfTheDay';
 
-const MainPage = ({ data, pageContext: { pageLang } }) => {
+const MainPage = ({ data }) => {
   const {
-    allMarkdownRemark: { nodes },
+    markdownRemark: aboutPortal,
+    authorsData: { nodes: authorsNodes },
   } = data;
 
-  // TODO: create lang filtering by graphQl-cli
-
   // TODO: take default values if language was not found
-  const authorsEdges = nodes.filter(
-    ({ frontmatter }) =>
-      frontmatter.dataKey === 'writerData' && frontmatter.contentLang === pageLang,
-  );
-  const aboutPortal = nodes.find(
-    ({ frontmatter }) =>
-      frontmatter.dataKey === 'aboutPortal' && frontmatter.contentLang === pageLang,
-  );
-
-  // const teamEdges = edges.filter(
-  //   ({ node }) =>
-  //     node.frontmatter.dataKey === 'teamInfo' && node.frontmatter.contentLang === pageLang,
-  // );
 
   // FIXME: find safe method to create page from markdown
   return (
     <Layout>
       <div dangerouslySetInnerHTML={{ __html: aboutPortal.html }} />
-      <AuthorOfTheDay authorsEdges={authorsEdges} />
-      <button type="button" onClick={() => console.log(authorsEdges)}>
-        console query
-      </button>
+      <AuthorOfTheDay authorsNodes={authorsNodes} />
     </Layout>
   );
 };
@@ -45,7 +28,12 @@ export default MainPage;
 
 export const pageQuery = graphql`
   query($pageLang: String!) {
-    allMarkdownRemark(filter: { frontmatter: { contentLang: { eq: $pageLang } } }) {
+    markdownRemark(frontmatter: { contentLang: { eq: $pageLang } }) {
+      html
+    }
+    authorsData: allMarkdownRemark(
+      filter: { frontmatter: { contentLang: { eq: $pageLang }, dataKey: { eq: "writerData" } } }
+    ) {
       nodes {
         frontmatter {
           path
@@ -59,7 +47,6 @@ export const pageQuery = graphql`
             publicURL
           }
         }
-        html
       }
     }
   }
