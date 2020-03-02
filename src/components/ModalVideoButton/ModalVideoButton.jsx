@@ -3,7 +3,7 @@ import ModalVideo from 'react-modal-video';
 import Button from 'react-bootstrap/Button';
 import { withTranslation } from 'react-i18next';
 
-class Video extends React.Component {
+class ModalVideoButton extends React.Component {
   state = {
     isOpen: false,
   };
@@ -21,7 +21,7 @@ class Video extends React.Component {
       state: { isOpen },
       openModal,
       closeModal,
-      props: { t, videoId, start },
+      props: { t, videoId, start, className },
     } = this;
 
     const options = {
@@ -30,14 +30,14 @@ class Video extends React.Component {
     };
 
     return (
-      <section className="video-block">
+      <>
         <ModalVideo isOpen={isOpen} videoId={videoId} youtube={options} onClose={closeModal} />
-        <Button variant="primary" onClick={openModal}>
+        <Button className={className} onClick={openModal}>
           {t('showVideo')}
         </Button>
-      </section>
+      </>
     );
   }
 }
 
-export default withTranslation()(Video);
+export default withTranslation()(ModalVideoButton);

@@ -5,7 +5,7 @@ import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import Link from '../Link';
-import ModalVideo from '../ModalVideo';
+import ModalVideoButton from '../ModalVideoButton';
 
 const AuthorCard = ({ authorData, isAuthorPage, t }) => {
   const {
@@ -30,10 +30,15 @@ const AuthorCard = ({ authorData, isAuthorPage, t }) => {
         <Card.Text>{yearsLife}</Card.Text>
         <Card.Text className="author-card__overview">{overview}</Card.Text>
         {isAuthorPage ? (
-          <ModalVideo className="author-card__link-btn" videoId={youtube} start={0} />
+          <Button
+            as={ModalVideoButton}
+            className="author-card__link-btn"
+            videoId={youtube}
+            start={0}
+          />
         ) : (
-          <Button className="author-card__link-btn">
-            <Link to={path}>{t('artistCardReadMore')}</Link>
+          <Button as={Link} className="author-card__link-btn" to={path}>
+            {t('artistCardReadMore')}
           </Button>
         )}
       </Card.Body>
