@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'gatsby';
-// import Link from '../Link';
 
+import Link from '../Link';
 import SearchBar from '../SearchBar';
 
 class SearchAuthor extends Component {
@@ -58,7 +57,7 @@ class SearchAuthor extends Component {
               return (
                 <tr key={key}>
                   <td>
-                    <Link to={`ru/${path}` || '#'}>{name}</Link>
+                    <Link to={`/${path}` || '#'}>{name}</Link>
                     <p>{birthPlace}</p>
                   </td>
                 </tr>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
+import Link from '../Link';
 
 import Header from '../Header';
 import Navigation from '../Navigation';
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         <h1>Writers of Belarus</h1>
         <Navigation>
           <Link to="/">home</Link>
-          <Link to="ru/search">search</Link>
+          <Link to="/search">search</Link>
           <Link to="/team">team</Link>
         </Navigation>
         <LangSwitcher />
