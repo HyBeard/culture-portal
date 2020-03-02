@@ -13,7 +13,7 @@ const authorPage = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-      <AuthorCard authorData={authorData} />
+      <AuthorCard authorData={authorData} isAuthorPage />
       <Timeline lines={activity} />
       <Masterpieces data={works}>
         <span>header</span>
