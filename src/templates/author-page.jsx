@@ -13,7 +13,6 @@ const authorPage = ({ data, t }) => {
   const authorData = data.markdownRemark.frontmatter;
   const { works, activity, photoGallery, birthPlaceLocation } = authorData;
   const { lat, lng, zoom } = birthPlaceLocation;
-  const { works, activity, photoGallery } = authorData;
   return (
     <Layout>
       <AuthorCard authorData={authorData} isAuthorPage />
