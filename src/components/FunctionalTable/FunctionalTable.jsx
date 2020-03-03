@@ -1,35 +1,32 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
+
 import Table from 'react-bootstrap/Table';
 
-const FunctionalTable = () => {
+const FunctionalTable = ({ worklog, name, t }) => {
   return (
-    <Table responsive>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>time spent</th>
-          <th>feature</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </Table>
+    <section className="worklog-table">
+      <h4>{name}</h4>
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>{t('timeSpent')}</th>
+            <th>{t('feature')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {worklog.map(({ spentTime, feature }) => {
+            return (
+              <tr>
+                <td>{spentTime}</td>
+                <td>{feature}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    </section>
   );
 };
 
-export default FunctionalTable;
+export default withTranslation()(FunctionalTable);
