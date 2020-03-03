@@ -10,8 +10,10 @@ const Team = ({ data, t }) => {
 
   return (
     <Layout>
-      <h2 style={{ textAlign: 'center' }}>{t('ourTeam')}</h2>
-      <DeveloperList data={usersInfo} />
+      <div className="content-wrap">
+        <h2 style={{ textAlign: 'center', marginTop: '1em' }}>{t('ourTeam')}</h2>
+        <DeveloperList data={usersInfo} />
+      </div>
     </Layout>
   );
 };
