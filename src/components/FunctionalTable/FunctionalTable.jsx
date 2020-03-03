@@ -15,9 +15,10 @@ const FunctionalTable = ({ worklog, name, t }) => {
           </tr>
         </thead>
         <tbody>
-          {worklog.map(({ spentTime, feature }) => {
+          {worklog.map(({ spentTime, feature }, i) => {
+            const key = `key: ${i}`;
             return (
-              <tr>
+              <tr key={key}>
                 <td>{spentTime}</td>
                 <td>{feature}</td>
               </tr>
