@@ -17,6 +17,7 @@ const Layout = ({ children, t }) => {
           <Link to="/">{t('homeLink')}</Link>
           <Link to="/search">{t('searchLink')}</Link>
           <Link to="/team">{t('teamLink')}</Link>
+          <Link to="/worklog">{t('worklogTitle')}</Link>
         </Navigation>
         <LangSwitcher />
       </Header>

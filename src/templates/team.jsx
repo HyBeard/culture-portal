@@ -10,7 +10,7 @@ const Team = ({ data, t }) => {
 
   return (
     <Layout>
-      <h2>{t('ourTeam')}</h2>
+      <h2 style={{ textAlign: 'center' }}>{t('ourTeam')}</h2>
       <DeveloperList data={usersInfo} />
     </Layout>
   );
