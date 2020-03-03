@@ -5,13 +5,13 @@ const PhotoGallery = ({ slides, children }) => {
   return (
     <section className="photo-gallery">
       <h3>{children}</h3>
-      <Carousel>
+      <Carousel className="photo-carousel">
         {slides.map((slide, index) => {
           const slideKey = `slide: ${index}`;
           const { publicURL } = slide;
           return (
             <Carousel.Item key={slideKey}>
-              {publicURL && <img src={publicURL} className="d-block w-100" alt={slideKey} />}
+              {publicURL && <img src={publicURL} className="gallery-photo" alt={slideKey} />}
             </Carousel.Item>
           );
         })}

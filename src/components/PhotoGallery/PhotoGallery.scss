@@ -1,9 +1,14 @@
 .photo-gallery {
-  width: 50%;
-  margin: auto;
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
 }
 
-.photo-gallery > img {
-  height: 4px;
+.carousel-item {
+  background-color: rgba(160, 160, 160, 0.5);
+  height: 60vh;
+}
+
+.gallery-photo {
+  height: 60vh;
 }
