@@ -28,5 +28,10 @@
   "masterpiecesHeader": "Masterpieces",
   "works": "Works",
   "dates": "Dates",
-  "photoGalleryHeader": "Gallery"
+  "photoGalleryHeader": "Gallery",
+  "worklogTitle": "Worklog",
+  "tableTitle": "Functionality table",
+  "mainDifficultiesTitle": "Main difficulties during implementation",
+  "timeSpent": "Time spent, h",
+  "feature": "Feature"
 }
