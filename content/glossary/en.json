@@ -28,5 +28,6 @@
   "masterpiecesHeader": "Masterpieces",
   "works": "Works",
   "dates": "Dates",
-  "photoGalleryHeader": "Gallery"
+  "photoGalleryHeader": "Gallery",
+  "searchHeader": "Authors"
 }

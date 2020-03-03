@@ -1,20 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SearchAuthor from '../components/SearchAuthor';
+import { withTranslation } from 'react-i18next';
 
+import SearchAuthor from '../components/SearchAuthor';
 import Layout from '../components/Layout';
 
-const SearchTemplate = ({ data }) => {
+const SearchTemplate = ({ data, t }) => {
   const authorsNodes = data.allMarkdownRemark.nodes.map((node) => node.frontmatter);
-
   return (
     <Layout>
-      <SearchAuthor authorsNodes={authorsNodes} fieldsToSearchFor={['name', 'birthPlace']} />
+      <h2>{t('searchHeader')}</h2>
+      <SearchAuthor
+        placeholder={t('searchPlaceholder')}
+        authorsNodes={authorsNodes}
+        fieldsToSearchFor={['name', 'birthPlace']}
+      />
     </Layout>
   );
 };
 
-export default SearchTemplate;
+export default withTranslation()(SearchTemplate);
 
 export const pageQuery = graphql`
   query($pageLang: String!) {

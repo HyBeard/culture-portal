@@ -41,13 +41,14 @@ class SearchAuthor extends Component {
       onSearchChange,
       state: { query },
     } = this;
+    const { placeholder } = this.props;
 
     const relevantAuthorsNodes = this.getRelevantAuthors();
 
     return (
       <div className="search-author">
         <InputGroup className="mb-3">
-          <SearchBar placeholder="placeholder" onSearchChange={onSearchChange} value={query} />
+          <SearchBar placeholder={placeholder} onSearchChange={onSearchChange} value={query} />
         </InputGroup>
         <Table responsive>
           <tbody>
