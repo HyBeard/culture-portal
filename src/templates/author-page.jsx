@@ -13,17 +13,20 @@ const authorPage = ({ data, t }) => {
   const authorData = data.markdownRemark.frontmatter;
   const { works, activity, photoGallery, birthPlaceLocation } = authorData;
   const { lat, lng, zoom } = birthPlaceLocation;
+
   return (
     <Layout>
-      <AuthorCard authorData={authorData} isAuthorPage />
-      <Timeline lines={activity} />
-      <Masterpieces data={works}>
-        <h3>{t('masterpiecesHeader')}</h3>
-        <span>{t('works')}</span>
-        <span>{t('dates')}</span>
-      </Masterpieces>
-      <Geowidget lat={lat} lng={lng} zoom={zoom} />
-      <PhotoGallery slides={photoGallery}>{t('photoGalleryHeader')}</PhotoGallery>
+      <div className="content-wrap" style={{ margin: '1em auto' }}>
+        <AuthorCard authorData={authorData} isAuthorPage />
+        <Timeline lines={activity} />
+        <Masterpieces data={works}>
+          <h3>{t('masterpiecesHeader')}</h3>
+          <span>{t('works')}</span>
+          <span>{t('dates')}</span>
+        </Masterpieces>
+        <Geowidget lat={lat} lng={lng} zoom={zoom} />
+        <PhotoGallery slides={photoGallery}>{t('photoGalleryHeader')}</PhotoGallery>
+      </div>
     </Layout>
   );
 };

@@ -19,7 +19,6 @@ const LangSwitcher = () => {
     navigate(`/${newLang}/${noPrefixedPath}`, { replace: true });
   };
 
-  // FIXME: get langs list from siteMetadata
   return (
     <Form className="select-language">
       <Form.Group className="mb-0">

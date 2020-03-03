@@ -1,0 +1,25 @@
+.bg-box {
+  background: url("../../../content/assets/background.jpg") no-repeat center bottom;
+  background-size: cover;
+}
+
+.portal-description {
+  display: grid;
+  min-height: 600px;
+  padding: 2rem 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--light);
+  text-shadow: var(--dark) 2px 2px 5px, var(--dark) 1px 3px 5px;
+
+  &__logo {
+    align-self: center;
+    margin: 2em 0;
+  }
+
+  &__info {
+    text-indent: 2em;
+    text-align: justify;
+  }
+}

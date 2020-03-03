@@ -13,18 +13,17 @@ const Worklog = ({ data, t }) => {
 
   return (
     <Layout>
-      <h2 style={{ textAlign: 'center' }}>{t('worklogTitle')}</h2>
-      <section className="section-functional-table">
-        <FunctionalTableList data={usersInfo} />
-      </section>
-      <section className="section-main-difficulties">
-        <h2>{t('mainDifficultiesTitle')}</h2>
-        <MainDifficultiesList difficultiesList={mainDifficult} />
-      </section>
-      <section
-        className="section-evaluation"
-        dangerouslySetInnerHTML={{ __html: mdEvalution }}
-       />
+      <div className="content-wrap">
+        <h2 style={{ textAlign: 'center' }}>{t('worklogTitle')}</h2>
+        <section className="section-functional-table">
+          <FunctionalTableList data={usersInfo} />
+        </section>
+        <section className="section-main-difficulties">
+          <h2>{t('mainDifficultiesTitle')}</h2>
+          <MainDifficultiesList difficultiesList={mainDifficult} />
+        </section>
+        <section className="section-evaluation" dangerouslySetInnerHTML={{ __html: mdEvalution }} />
+      </div>
     </Layout>
   );
 };
@@ -32,8 +31,8 @@ const Worklog = ({ data, t }) => {
 export default withTranslation()(Worklog);
 
 export const pageQuery = graphql`
-  {
-    markdownRemark(frontmatter: { contentLang: { eq: "ru" }, dataKey: { eq: "teamInfo" } }) {
+  query($pageLang: String!) {
+    markdownRemark(frontmatter: { contentLang: { eq: $pageLang }, dataKey: { eq: "teamInfo" } }) {
       frontmatter {
         team {
           worklog {

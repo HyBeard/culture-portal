@@ -1,14 +1,16 @@
 import React from 'react';
 
 const Header = ({ children }) => {
-  const [header, nav, switchLang] = children;
+  const [nav, switchLang] = children;
+
   return (
     <header className="header">
-      <div className="header__main">
-        {header}
-        {nav}
+      <div className="content-wrap">
+        <div className="header__main">
+          <div className="header__nav"> {nav}</div>
+          <div className="header__select-lang">{switchLang}</div>
+        </div>
       </div>
-      <div className="header__select-lang">{switchLang}</div>
     </header>
   );
 };

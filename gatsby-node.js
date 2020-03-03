@@ -38,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const authorPage = path.resolve('./src/templates/author-page.jsx');
   const searchPage = path.resolve('./src/templates/search.jsx');
   const teamPage = path.resolve('./src/templates/team.jsx');
+  const worklogPage = path.resolve('./src/templates/worklog.jsx');
   const errorPage = path.resolve('./src/pages/404.jsx');
 
   const createPageWithLngContext = (pathname, component, lng) => {
@@ -55,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPageWithLngContext('/404', errorPage, lng);
     createPageWithLngContext('/search', searchPage, lng);
     createPageWithLngContext('/team', teamPage, lng);
+    createPageWithLngContext('/worklog', worklogPage, lng);
   });
 
   authorsNodes.forEach(({ id, frontmatter: { contentLang, path: pathname } }) =>

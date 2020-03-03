@@ -1,20 +1,35 @@
 .header {
+  color: var(--dark);
   position: relative;
+  padding: 1em 0;
   margin: 0px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--dark);
 
   &__main {
     display: grid;
-    grid-template-rows: 70% 30%;
-    align-items: center;
-    justify-content: center;
+    grid-template-areas: "nav langSelect";
+    align-items: baseline;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      grid-template-areas:
+        "langSelect"
+        "nav";
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    grid-column: auto;
+    grid-area: nav;
   }
 
   &__select-lang {
-    position: absolute;
-    top: 2em;
-    right: 2em;
-    width: 8em;
-    height: 3em;
+    grid-area: langSelect;
+
+    @media (max-width: 576px) {
+      justify-self: center;
+      margin-bottom: 0.5em;
+    }
   }
 }

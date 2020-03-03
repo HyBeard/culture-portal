@@ -28,12 +28,12 @@ activity:
     description: "П. У. Броўка памёр 24 сакавіка 1980 года ў Мінску. Пахаваны на Усходніх могілках."
 deathDate: "24 Сакавіка 1980"
 photoGallery:
-  - "./borodulin_1.JPG"
-  - "./borodulin_2.JPG"
-  - "./borodulin_3.JPG"
-  - "./borodulin_4.JPG"
+  - "./brovka_1.JPG"
+  - "./brovka_2.JPG"
+  - "./brovka_3.JPG"
+  - "./brovka_4.JPG"
 youtube: "https://www.youtube.com/watch?v=7xHGTr4EbK4"
-photo: "./borodulin_photo.JPG"
+photo: "./brovka_photo.JPG"
 works:
   - date: "1931"
     title: "Цэхавыя будні"
