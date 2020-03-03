@@ -20,5 +20,9 @@
   "searchPlaceholder": "Search",
   "noSearchResults": "No results found",
   "showVideo": "Show video",
-  "worklogTitle": "Workbook page"
+  "worklogTitle": "Worklog",
+  "tableTitle": "Functionality table",
+  "mainDifficultiesTitle": "Main difficulties during implementation",
+  "timeSpent": "Time spent, h",
+  "feature": "Feature"
 }
