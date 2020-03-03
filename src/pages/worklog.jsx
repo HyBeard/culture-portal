@@ -8,6 +8,8 @@ import MainDifficultiesList from '../components/MainDifficultiesList';
 
 const Worklog = ({ data, t }) => {
   const usersInfo = data.markdownRemark.frontmatter.team;
+  const mainDifficult = data.markdownRemark.frontmatter.mainDifficulties;
+  const mdEvalution = data.markdownRemark.html;
 
   return (
     <Layout>
@@ -16,9 +18,13 @@ const Worklog = ({ data, t }) => {
         <FunctionalTableList data={usersInfo} />
       </section>
       <section className="section-main-difficulties">
-        <h3>{t('mainDifficultiesTitle')}</h3>
-        <MainDifficultiesList />
+        <h2>{t('mainDifficultiesTitle')}</h2>
+        <MainDifficultiesList difficultiesList={mainDifficult} />
       </section>
+      <section
+        className="section-evaluation"
+        dangerouslySetInnerHTML={{ __html: mdEvalution }}
+       />
     </Layout>
   );
 };
@@ -36,7 +42,9 @@ export const pageQuery = graphql`
           }
           name
         }
+        mainDifficulties
       }
+      html
     }
   }
 `;
