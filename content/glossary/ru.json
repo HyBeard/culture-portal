@@ -2,7 +2,7 @@
   "selectLanguage": "Язык",
   "artistsPageButton": "К списку писателей",
   "mainPageButton": "Главная",
-  "AuthorOfDay": "Писатель дня",
+  "AuthorOfTheDay": "Писатель дня",
   "footerMessage": "Сайт разработан",
   "timelineTitle": "Линия времени",
   "worksTitle": "Главные произведения",
@@ -29,7 +29,7 @@
   "works": "Работы",
   "dates": "Даты",
   "photoGalleryHeader": "Галлерея",
-  "searchHeader": "Авторы"
+  "searchHeader": "Авторы",
   "worklogTitle": "Рабочий журнал",
   "tableTitle": "Таблица реализованного функционала",
   "mainDifficultiesTitle": "Главные трудности во время реализации",

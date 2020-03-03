@@ -2,7 +2,7 @@
   "selectLanguage": "Мова",
   "artistsPageButton": "Да спісу пісьменнікаў",
   "mainPageButton": "Галоўная",
-  "AuthorOfDay": "Пісьменнік дня",
+  "AuthorOfTheDay": "Пісьменнік дня",
   "footerMessage": "Сайт распрацаваны",
   "timelineTitle": "Стужка часу",
   "worksTitle": "Галоўныя творы",
@@ -29,7 +29,7 @@
   "works": "Працы",
   "dates": "Даты",
   "photoGalleryHeader": "Галерэя",
-  "searchHeader": "Аўтары"
+  "searchHeader": "Аўтары",
   "worklogTitle": "Працоўны часопіс",
   "tableTitle": "Табліца рэалізаванага функцыяналу",
   "mainDifficultiesTitle": "Галоўныя складанасці падчас рэалізацыі",
