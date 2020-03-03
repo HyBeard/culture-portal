@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 
@@ -21,11 +20,23 @@ class Geowidget extends Component {
   componentDidMount() {
     const { mapContainer, lat, lng, zoom } = this.state;
     const style = 'mapbox://styles/mapbox/streets-v11';
+    const center = [lng, lat];
     const map = new mapboxgl.Map({
-      container: mapContainer,
+      container: mapContainer.current,
       style,
-      center: [lng, lat],
+      center,
       zoom,
+    });
+    const pop = new mapboxgl.Popup();
+    pop.setLngLat(center);
+    pop.setHTML('');
+    pop.addTo(map);
+    map.on('move', () => {
+      this.setState({
+        lng: map.getCenter().lng.toFixed(4),
+        lat: map.getCenter().lat.toFixed(4),
+        zoom: map.getZoom().toFixed(2),
+      });
     });
   }
 
