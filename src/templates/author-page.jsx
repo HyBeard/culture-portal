@@ -16,7 +16,7 @@ const authorPage = ({ data, t }) => {
 
   return (
     <Layout>
-      <div className="content-wrap">
+      <div className="content-wrap" style={{ margin: '1em auto' }}>
         <AuthorCard authorData={authorData} isAuthorPage />
         <Timeline lines={activity} />
         <Masterpieces data={works}>

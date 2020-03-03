@@ -10,7 +10,14 @@ const SearchTemplate = ({ data, t }) => {
   return (
     <Layout>
       <div className="content-wrap">
-        <h2>{t('searchHeader')}</h2>
+        <h2
+          style={{
+            textAlign: 'center',
+            margin: '0.5em 0',
+          }}
+        >
+          {t('searchHeader')}
+        </h2>
         <SearchAuthor
           placeholder={t('searchPlaceholder')}
           authorsNodes={authorsNodes}

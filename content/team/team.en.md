@@ -91,7 +91,7 @@ mainDifficulties:
 - [ ] **10** Contentful / netlify cms is used for content management
 - [ ] **20** Animations / special effects like paralax
 - [x] **up to 20** Outstanding design;
-- [x] **20** Storybook/styleguidist/other react styleguide tool usage for the page with styles
+- [ ] **20** Storybook/styleguidist/other react styleguide tool usage for the page with styles
 
 ### Fines
 
@@ -103,4 +103,4 @@ mainDifficulties:
 
 ---
 
-### Total score: 250
+### Total score: 230
