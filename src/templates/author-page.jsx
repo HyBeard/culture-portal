@@ -7,9 +7,12 @@ import AuthorCard from '../components/AuthorCard';
 import Masterpieces from '../components/Masterpieces';
 import Timeline from '../components/Timeline';
 import PhotoGallery from '../components/PhotoGallery';
+import Geowidget from '../components/Geowidget';
 
 const authorPage = ({ data, t }) => {
   const authorData = data.markdownRemark.frontmatter;
+  const { works, activity, photoGallery, birthPlaceLocation } = authorData;
+  const { lat, lng, zoom } = birthPlaceLocation;
   const { works, activity, photoGallery } = authorData;
   return (
     <Layout>
@@ -20,6 +23,7 @@ const authorPage = ({ data, t }) => {
         <span>{t('works')}</span>
         <span>{t('dates')}</span>
       </Masterpieces>
+      <Geowidget lat={lat} lng={lng} zoom={zoom} />
       <PhotoGallery slides={photoGallery}>{t('photoGalleryHeader')}</PhotoGallery>
     </Layout>
   );
