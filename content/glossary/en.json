@@ -19,5 +19,14 @@
   "ourTeam": "Our Team",
   "searchPlaceholder": "Search",
   "noSearchResults": "No results found",
-  "showVideo": "Show video"
+  "showVideo": "Show video",
+  "mainHeader": "Writers of Belarus",
+  "homeLink": "home",
+  "searchLink": "search",
+  "teamLink": "team",
+  "footerDesc": "Portal of Belarusian writers",
+  "masterpiecesHeader": "Masterpieces",
+  "works": "Works",
+  "dates": "Dates",
+  "photoGalleryHeader": "Gallery"
 }
