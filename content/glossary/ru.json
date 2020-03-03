@@ -29,5 +29,9 @@
   "works": "Работы",
   "dates": "Даты",
   "photoGalleryHeader": "Галлерея",
-  "worklogTitle": "Cтраница с рабочим журналом"
+  "worklogTitle": "Рабочий журнал",
+  "tableTitle": "Таблица реализованного функционала",
+  "mainDifficultiesTitle": "Главные трудности во время реализации",
+  "timeSpent": "Потраченное время, ч",
+  "feature": "Выполненная функция"
 }

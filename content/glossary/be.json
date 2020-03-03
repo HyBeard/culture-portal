@@ -29,5 +29,9 @@
   "works": "Працы",
   "dates": "Даты",
   "photoGalleryHeader": "Галерэя",
-  "worklogTitle": "Старонка з рабочым часопісам"
+  "worklogTitle": "Працоўны часопіс",
+  "tableTitle": "Табліца рэалізаванага функцыяналу",
+  "mainDifficultiesTitle": "Галоўныя складанасці падчас рэалізацыі",
+  "timeSpent": "Затрачана часу, г",
+  "feature": "Выкананная функцыя"
 }
