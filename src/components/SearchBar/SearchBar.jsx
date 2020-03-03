@@ -18,10 +18,10 @@ class SearchPanel extends Component {
 
   render() {
     const {
-      placeholder,
       onTermChange,
       state: { term },
     } = this;
+    const { placeholder } = this.props;
 
     return <FormControl placeholder={placeholder} onChange={onTermChange} value={term} />;
   }
