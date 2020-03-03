@@ -1,0 +1,24 @@
+.navigation {
+  a {
+    margin: 0 1em;
+    color: var(--dark);
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__logo {
+    flex: 1 0 auto;
+  }
+}

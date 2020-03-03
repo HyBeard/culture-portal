@@ -1,0 +1,35 @@
+.header {
+  color: var(--dark);
+  position: relative;
+  padding: 1em 0;
+  margin: 0px;
+  border-bottom: 3px solid var(--dark);
+
+  &__main {
+    display: grid;
+    grid-template-areas: "nav langSelect";
+    align-items: baseline;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      grid-template-areas:
+        "langSelect"
+        "nav";
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    grid-column: auto;
+    grid-area: nav;
+  }
+
+  &__select-lang {
+    grid-area: langSelect;
+
+    @media (max-width: 576px) {
+      justify-self: center;
+      margin-bottom: 0.5em;
+    }
+  }
+}

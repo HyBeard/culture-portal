@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
+  parser: 'babel-eslint',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -19,5 +20,6 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/prop-types': 0,
+    'react/state-in-constructor': 0,
   },
 };
