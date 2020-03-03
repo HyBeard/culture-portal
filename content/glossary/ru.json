@@ -19,5 +19,14 @@
   "ourTeam": "Наша Команда",
   "searchPlaceholder": "Поиск",
   "noSearchResults": "Ничего не найдено",
-  "showVideo": "Смотреть видео"
+  "showVideo": "Смотреть видео",
+  "mainHeader": "Писатели Белоруссии",
+  "homeLink": "На главную",
+  "searchLink": "Авторы",
+  "teamLink": "Команда",
+  "footerDesc": "Портал Белорусских писателей",
+  "masterpiecesHeader": "Шедевры",
+  "works": "Работы",
+  "dates": "Даты",
+  "photoGalleryHeader": "Галлерея"
 }
