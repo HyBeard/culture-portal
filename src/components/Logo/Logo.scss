@@ -1,3 +1,7 @@
 .logo {
-  fill: var(--light);
+  max-width: 600px;
+
+  & path {
+    fill: var(--light);
+  }
 }

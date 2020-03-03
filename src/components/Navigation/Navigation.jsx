@@ -1,13 +1,16 @@
 import React from 'react';
 
 const Navigation = ({ children }) => {
+  const [logo, ...nav] = children;
+
   return (
     <nav className="navigation">
-      <ul className="navigation-list">
-        {children.map((link, index) => {
-          const key = `navigation-item: ${index}`;
+      <ul className="navigation__list">
+        <li className="navigation__item navigation__logo">{logo}</li>
+        {nav.map((link, index) => {
+          const key = `navigation__item: ${index}`;
           return (
-            <li key={key} className="navigation-item">
+            <li key={key} className="navigation__item">
               {link}
             </li>
           );
