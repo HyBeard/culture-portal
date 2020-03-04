@@ -13,7 +13,7 @@ const SearchTemplate = ({ data, t }) => {
         <h2
           style={{
             textAlign: 'center',
-            margin: '0.5em 0',
+            margin: '1em 0',
           }}
         >
           {t('searchHeader')}

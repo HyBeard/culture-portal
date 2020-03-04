@@ -14,7 +14,7 @@ const Worklog = ({ data, t }) => {
   return (
     <Layout>
       <div className="content-wrap">
-        <h2 style={{ textAlign: 'center' }}>{t('worklogTitle')}</h2>
+        <h2 style={{ marginTop: '30px', textAlign: 'center' }}>{t('worklogTitle')}</h2>
         <section className="section-functional-table">
           <FunctionalTableList data={usersInfo} />
         </section>

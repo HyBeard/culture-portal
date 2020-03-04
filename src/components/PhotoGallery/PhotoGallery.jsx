@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 const PhotoGallery = ({ slides, children }) => {
   return (
     <section className="photo-gallery">
-      <h3>{children}</h3>
+      <h3 style={{ margin: '1.6em 0 1.3em' }}>{children}</h3>
       <Carousel className="photo-carousel">
         {slides.map((slide, index) => {
           const slideKey = `slide: ${index}`;

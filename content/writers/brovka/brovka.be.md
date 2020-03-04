@@ -32,7 +32,7 @@ photoGallery:
   - "./brovka_2.JPG"
   - "./brovka_3.JPG"
   - "./brovka_4.JPG"
-youtube: "https://www.youtube.com/watch?v=7xHGTr4EbK4"
+youtube: "7xHGTr4EbK4"
 photo: "./brovka_photo.JPG"
 works:
   - date: "1931"

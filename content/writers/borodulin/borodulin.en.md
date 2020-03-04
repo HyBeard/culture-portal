@@ -30,7 +30,7 @@ photoGallery:
   - "./borodulin_2.JPG"
   - "./borodulin_3.JPG"
   - "./borodulin_4.JPG"
-youtube: "https://www.youtube.com/watch?v=kuaJLU71W10"
+youtube: "kuaJLU71W10"
 photo: "./borodulin_photo.JPG"
 works:
   - date: "1959"

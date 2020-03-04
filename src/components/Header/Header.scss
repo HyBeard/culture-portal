@@ -1,35 +1,45 @@
 .header {
-  color: var(--dark);
-  position: relative;
   padding: 1em 0;
   margin: 0px;
   border-bottom: 3px solid var(--dark);
 
   &__main {
-    display: grid;
-    grid-template-areas: "nav langSelect";
-    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-
-    @media (max-width: 576px) {
-      grid-template-areas:
-        "langSelect"
-        "nav";
+    @media (max-width: 690px) {
       justify-content: center;
+      margin-bottom: 0.5em;
     }
   }
 
   &__nav {
-    grid-column: auto;
-    grid-area: nav;
+    display: flex;
+    align-items: center;
+  }
+
+  .navigation__list {
+    filter: drop-shadow(2px 2px 1px #5e6d65);
+    font-size: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5em;
+    @media (max-width: 576px) {
+      justify-content: space-between;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .navigation__logo {
+    a {
+      color: #63d07b;
+    }
   }
 
   &__select-lang {
-    grid-area: langSelect;
-
-    @media (max-width: 576px) {
-      justify-self: center;
-      margin-bottom: 0.5em;
+    @media (max-width: 570px) {
+      justify-content: center;
+      margin-top: 0.5em;
     }
   }
 }

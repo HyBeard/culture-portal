@@ -30,7 +30,7 @@ photoGallery:
   - "./adamovich_2.JPG"
   - "./adamovich_3.JPG"
   - "./adamovich_4.JPG"
-youtube: "https://www.youtube.com/watch?v=J7UxHVA_z7M"
+youtube: "J7UxHVA_z7M"
 photo: "./adamovich_photo.JPG"
 works:
   - date: "1969"

@@ -32,7 +32,7 @@ photoGallery:
   - "./bykov_2.JPG"
   - "./bykov_3.JPG"
   - "./bykov_4.JPG"
-youtube: "https://www.youtube.com/watch?v=rnt3qMC-rdY"
+youtube: "rnt3qMC-rdY"
 photo: "./bykov_photo.JPG"
 works:
   - date: "1965"

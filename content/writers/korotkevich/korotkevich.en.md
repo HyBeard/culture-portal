@@ -30,7 +30,7 @@ photoGallery:
   - "./korotkevich_2.JPG"
   - "./korotkevich_3.JPG"
   - "./korotkevich_4.JPG"
-youtube: "https://www.youtube.com/watch?v=9UIt_HLlbxs"
+youtube: "9UIt_HLlbxs"
 photo: "./korotkevich_photo.JPG"
 works:
   - date: "1964"

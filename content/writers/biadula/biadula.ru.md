@@ -27,7 +27,7 @@ photoGallery:
   - "./biadula_1.jpg"
   - "./biadula_2.jpg"
   - "./biadula_3.jpg"
-youtube: "https://www.youtube.com/watch?v=XUFhoYrHmD0"
+youtube: "XUFhoYrHmD0"
 photo: "./biadula-photo.jpg"
 works:
   - date: "1922"

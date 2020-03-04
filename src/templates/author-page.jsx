@@ -16,16 +16,16 @@ const authorPage = ({ data, t }) => {
 
   return (
     <Layout>
-      <div className="content-wrap" style={{ margin: '1em auto' }}>
+      <div className="content-wrap" style={{ margin: '2em auto' }}>
         <AuthorCard authorData={authorData} isAuthorPage />
         <Timeline lines={activity} />
         <Masterpieces data={works}>
-          <h3>{t('masterpiecesHeader')}</h3>
+          <h3 style={{ margin: '0 0 1.2em 0' }}>{t('masterpiecesHeader')}</h3>
           <span>{t('works')}</span>
           <span>{t('dates')}</span>
         </Masterpieces>
-        <Geowidget lat={lat} lng={lng} zoom={zoom} />
         <PhotoGallery slides={photoGallery}>{t('photoGalleryHeader')}</PhotoGallery>
+        <Geowidget lat={lat} lng={lng} zoom={zoom} />
       </div>
     </Layout>
   );

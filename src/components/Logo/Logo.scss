@@ -1,5 +1,6 @@
 .logo {
   max-width: 600px;
+  filter: drop-shadow(7px 4px 4px #a1301c);
 
   & path {
     fill: var(--light);
