@@ -4,6 +4,8 @@ import mapboxgl from 'mapbox-gl';
 import secretKey from './secretKey';
 
 class Geowidget extends Component {
+  geowdigetMounted = false;
+
   constructor(props) {
     super(props);
     mapboxgl.accessToken = secretKey;
@@ -17,6 +19,7 @@ class Geowidget extends Component {
   }
 
   componentDidMount() {
+    this.geowdigetMounted = true;
     const { mapContainer, lat, lng, zoom } = this.state;
     const style = 'mapbox://styles/mapbox/streets-v11';
     const center = [lng, lat];
@@ -31,12 +34,18 @@ class Geowidget extends Component {
     pop.setHTML('');
     pop.addTo(map);
     map.on('move', () => {
-      this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2),
-      });
+      if (this.geowdigetMounted) {
+        this.setState({
+          lng: map.getCenter().lng.toFixed(4),
+          lat: map.getCenter().lat.toFixed(4),
+          zoom: map.getZoom().toFixed(2),
+        });
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.geowdigetMounted = false;
   }
 
   render() {
