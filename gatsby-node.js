@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -81,38 +80,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     });
   }
-
-  // if (node.internal.type === 'MarkdownRemark') {
-  //   const value = createFilePath({ node, getNode });
-  //   createNodeField({
-  //     name: 'slug',
-  //     node,
-  //     value,
-  //   });
-  // }
 };
 
-// TODO: check with build
-exports.onPostBuild = () => {
-  console.log('Copying locale');
-
-  fs.copySync(path.join(__dirname, '/content/glossary'), path.join(__dirname, '/public/locales'));
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /mapbox-gl/,
+            use: ['null-loader'],
+          },
+        ],
+      },
+    });
+  }
 };
-
-// exports.onCreatePage = async ({ page, actions }) => {
-//   const { createPage, deletePage } = actions
-
-//   // Check if the page is a localized 404
-//   if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
-//     const oldPage = { ...page }
-
-//     // Get the language code from the path, and match all paths
-//     // starting with this code (apart from other valid paths)
-//     const langCode = page.path.split(`/`)[1]
-//     page.matchPath = `/${langCode}/*`
-
-//     // Recreate the modified page
-//     deletePage(oldPage)
-//     createPage(page)
-//   }
-// }

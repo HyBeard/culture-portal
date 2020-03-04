@@ -3,11 +3,10 @@ import mapboxgl from 'mapbox-gl';
 
 import secretKey from './secretKey';
 
-mapboxgl.accessToken = secretKey;
-
 class Geowidget extends Component {
   constructor(props) {
     super(props);
+    mapboxgl.accessToken = secretKey;
     this.state = {
       lng: 0,
       lat: 0,
